@@ -1,0 +1,639 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #050505;
+  color: white;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #dc2626;
+  color: white;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+@keyframes jcFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes jcLogoReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+.hero-content {
+  animation: jcFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.logo-hero {
+  animation: jcLogoReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ========================================
+   PRODUCTS
+======================================== */
+
+.product-card {
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(220, 38, 38, 0.35);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(220, 38, 38, 0.06);
+}
+
+/* ========================================
+   SECTION REVEAL
+======================================== */
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-reveal {
+  animation: sectionReveal 0.8s ease both;
+}
+
+/* ========================================
+   SOCIAL FLOATING
+======================================== */
+
+.social-bubble {
+  transition:
+    width 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    transform 0.35s ease;
+}
+
+.social-bubble:hover {
+  width: 145px;
+
+  border-color: rgba(220, 38, 38, 0.45);
+
+  background: rgba(20, 20, 20, 0.96);
+
+  transform: translateX(-4px);
+}
+
+.social-label {
+  max-width: 0;
+
+  margin-left: 0;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+    max-width 0.35s ease,
+    margin-left 0.35s ease,
+    opacity 0.25s ease;
+}
+
+.social-bubble:hover .social-label {
+  max-width: 90px;
+
+  margin-left: 10px;
+
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .social-bubble:hover {
+    width: 48px;
+
+    transform: none;
+  }
+
+  .social-bubble:hover .social-label {
+    max-width: 0;
+
+    margin-left: 0;
+
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   JC INTRO
+======================================== */
+
+.jc-intro {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  overflow: hidden;
+
+  background: #000;
+}
+
+/* ========================================
+   INTRO PANELS
+======================================== */
+
+.jc-intro__panel {
+  position: absolute;
+
+  top: 0;
+
+  width: 50%;
+
+  height: 100%;
+
+  background: #000;
+
+  z-index: 2;
+}
+
+.jc-intro__panel--left {
+  left: 0;
+
+  animation:
+    jcPanelLeft 0.35s cubic-bezier(0.77, 0, 0.18, 1)
+    0.95s forwards;
+}
+
+.jc-intro__panel--right {
+  right: 0;
+
+  animation:
+    jcPanelRight 0.35s cubic-bezier(0.77, 0, 0.18, 1)
+    0.95s forwards;
+}
+
+/* ========================================
+   INTRO BRAND
+======================================== */
+
+.jc-intro__brand {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  pointer-events: none;
+
+  animation:
+    jcBrandFade 0.18s ease
+    0.98s forwards;
+}
+
+/* ========================================
+   JC LOGO TYPOGRAPHY
+======================================== */
+
+.jc-intro__logo-type {
+  position: relative;
+
+  width: clamp(260px, 34vw, 520px);
+
+  height: clamp(130px, 18vw, 260px);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(8rem, 18vw, 15rem);
+
+  font-weight: 900;
+
+  font-style: italic;
+
+  line-height: 0.78;
+
+  color: #fff;
+
+  filter:
+    drop-shadow(
+      0 0 20px
+      rgba(255, 255, 255, 0.05)
+    )
+    drop-shadow(
+      0 0 45px
+      rgba(220, 38, 38, 0.08)
+    );
+
+  animation:
+    jcLogoEnter 0.55s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+/* ========================================
+   JC LETTERS
+======================================== */
+
+.jc-intro__letter {
+  position: absolute;
+
+  top: 50%;
+
+  display: block;
+
+  transform:
+    translateY(-50%);
+}
+
+/* J */
+
+.jc-intro__letter--j {
+  right: 50%;
+
+  margin-right: 30px;
+
+  animation:
+    jcLetterJ 0.45s
+    cubic-bezier(0.77, 0, 0.18, 1)
+    0.72s forwards;
+}
+
+/* C */
+
+.jc-intro__letter--c {
+  left: 50%;
+
+  margin-left: 2px;
+
+  animation:
+    jcLetterC 0.45s
+    cubic-bezier(0.77, 0, 0.18, 1)
+    0.72s forwards;
+}
+
+/* ========================================
+   INTRO TOP TEXT
+======================================== */
+
+.jc-intro__top-text {
+  position: absolute;
+
+  top:
+    calc(
+      50% -
+      clamp(8rem, 15vw, 12rem)
+    );
+
+  color: #fff;
+
+  font-size:
+    clamp(8px, 0.8vw, 12px);
+
+  font-weight: 700;
+
+  letter-spacing: 0.48em;
+
+  opacity: 0;
+
+  animation:
+    jcTextReveal 0.4s ease
+    0.15s forwards;
+}
+
+/* ========================================
+   INTRO BOTTOM TEXT
+======================================== */
+
+.jc-intro__bottom-text {
+  margin-top: 42px;
+
+  color: #fff;
+
+  font-size:
+    clamp(9px, 0.9vw, 13px);
+
+  font-weight: 700;
+
+  letter-spacing: 0.42em;
+
+  opacity: 0;
+
+  animation:
+    jcTextReveal 0.4s ease
+    0.22s forwards;
+}
+
+.jc-intro__bottom-text strong {
+  color: #dc2626;
+
+  font-weight: 800;
+}
+
+/* ========================================
+   INTRO CENTER LINE
+======================================== */
+
+.jc-intro__line {
+  position: absolute;
+
+  left: 50%;
+
+  top: 0;
+
+  z-index: 7;
+
+  width: 2px;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      #ef111a 18%,
+      #ef111a 82%,
+      transparent 100%
+    );
+
+  box-shadow:
+    0 0 10px
+      rgba(239, 17, 26, 0.9),
+    0 0 28px
+      rgba(239, 17, 26, 0.5);
+
+  transform:
+    translateX(-50%)
+    scaleY(0);
+
+  transform-origin: center;
+
+  animation:
+    jcCentralLine 0.7s ease
+    0.35s forwards;
+}
+
+/* ========================================
+   INTRO ANIMATIONS
+======================================== */
+
+@keyframes jcLogoEnter {
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.82);
+
+    filter:
+      blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1);
+
+    filter:
+      blur(0);
+  }
+}
+
+@keyframes jcTextReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(10px);
+  }
+
+  to {
+    opacity: 0.85;
+
+    transform:
+      translateY(0);
+  }
+}
+
+@keyframes jcCentralLine {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      scaleY(0);
+  }
+
+  30% {
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      scaleY(1);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform:
+      translateX(-50%)
+      scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translateX(-50%)
+      scaleY(0);
+  }
+}
+
+@keyframes jcLetterJ {
+  0% {
+    transform:
+      translateY(-50%)
+      translateX(0);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateY(-50%)
+      translateX(-42vw);
+
+    opacity: 0;
+  }
+}
+
+@keyframes jcLetterC {
+  0% {
+    transform:
+      translateY(-50%)
+      translateX(0);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateY(-50%)
+      translateX(42vw);
+
+    opacity: 0;
+  }
+}
+
+@keyframes jcBrandFade {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes jcPanelLeft {
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-100%);
+  }
+}
+
+@keyframes jcPanelRight {
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(100%);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 640px) {
+  .jc-intro__logo-type {
+    width: 260px;
+
+    height: 150px;
+
+    font-size:
+      clamp(7rem, 30vw, 10rem);
+  }
+
+  .jc-intro__letter--j {
+    margin-right: 18px;
+  }
+
+  .jc-intro__letter--c {
+    margin-left: 0;
+  }
+
+  .jc-intro__top-text {
+    top:
+      calc(
+        50% - 7rem
+      );
+
+    letter-spacing:
+      0.28em;
+  }
+
+  .jc-intro__bottom-text {
+    margin-top: 32px;
+
+    letter-spacing:
+      0.25em;
+  }
+
+  @keyframes jcLetterJ {
+    0% {
+      transform:
+        translateY(-50%)
+        translateX(0);
+
+      opacity: 1;
+    }
+
+    100% {
+      transform:
+        translateY(-50%)
+        translateX(-55vw);
+
+      opacity: 0;
+    }
+  }
+
+  @keyframes jcLetterC {
+    0% {
+      transform:
+        translateY(-50%)
+        translateX(0);
+
+      opacity: 1;
+    }
+
+    100% {
+      transform:
+        translateY(-50%)
+        translateX(55vw);
+
+      opacity: 0;
+    }
+  }
+}
