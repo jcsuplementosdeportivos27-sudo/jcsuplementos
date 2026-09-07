@@ -14,6 +14,9 @@ export default function Home() {
   useEffect(() => {
     console.log("1.0.1");
   }, []);
+   useEffect(() => {
+    console.log("1.0.2");
+  }, []);
 
   return (
     <>
