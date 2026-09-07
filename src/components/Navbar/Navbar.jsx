@@ -11,7 +11,7 @@ export default function Navbar() {
           className="group flex items-center gap-3 transition duration-300"
         >
           <Image
-            src="/logo/jc-logo.png"
+            src="https://jcsuplementosdeportivos27-sudo.github.io/jcsuplementos/logo/jc-logo.png"
             alt="JC Suplementos Deportivos"
             width={58}
             height={58}
