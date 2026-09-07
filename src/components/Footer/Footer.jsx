@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-center">
           <div className="flex items-center gap-4">
             <Image
-              src="/logo/jc-logo.png"
+              src="https://jcsuplementosdeportivos27-sudo.github.io/jcsuplementos/logo/jc-logo.png"
               alt="JC Suplementos Deportivos"
               width={70}
               height={70}
