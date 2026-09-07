@@ -51,7 +51,7 @@ export default function Hero() {
           <div className="pointer-events-none absolute h-[500px] w-[500px] rounded-full bg-red-600/5 blur-[150px]" />
 
           <Image
-            src="/logo/jc-logo.png"
+            src="https://jcsuplementosdeportivos27-sudo.github.io/jcsuplementos/logo/jc-logo.png"
             alt="JC Suplementos Deportivos"
             width={720}
             height={720}
