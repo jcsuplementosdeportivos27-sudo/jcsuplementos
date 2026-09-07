@@ -6,7 +6,7 @@ import About from "@/components/About/About";
 import Contact from "@/components/Contact/Contact";
 import SocialFloating from "@/components/SocialFloating/SocialFloating";
 import Footer from "@/components/Footer/Footer";
-
+console.log("1.0.0")
 export default function Home() {
   return (
     <>
