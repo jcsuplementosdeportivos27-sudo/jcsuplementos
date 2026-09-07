@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect } from "react";
 import Intro from "@/components/Intro/Intro";
 import Navbar from "@/components/Navbar/Navbar";
 import Hero from "@/components/Hero/Hero";
@@ -6,8 +9,12 @@ import About from "@/components/About/About";
 import Contact from "@/components/Contact/Contact";
 import SocialFloating from "@/components/SocialFloating/SocialFloating";
 import Footer from "@/components/Footer/Footer";
-console.log("1.0.0")
+
 export default function Home() {
+  useEffect(() => {
+    console.log("1.0.0");
+  }, []);
+
   return (
     <>
       <Intro />
