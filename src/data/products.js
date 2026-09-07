@@ -5,7 +5,8 @@ export const products = [
     category: "Preentrenos",
     description:
       "Energía y enfoque para entrenamientos de alta intensidad.",
-    image: "/products/product-1.png",
+    image:
+      "https://jcsuplementosdeportivos27-sudo.github.io/jcsuplementos/products/product-1.png",
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const products = [
     category: "Creatinas",
     description:
       "Creatina monohidratada de alta pureza para fuerza, rendimiento y recuperación.",
-    image: "/products/product-2.png",
+    image:
+      "https://jcsuplementosdeportivos27-sudo.github.io/jcsuplementos/products/product-2.png",
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const products = [
     category: "Proteínas",
     description:
       "Proteína whey ideal para apoyar la recuperación y el desarrollo muscular.",
-    image: "/products/product-3.png",
+    image:
+      "https://jcsuplementosdeportivos27-sudo.github.io/jcsuplementos/products/product-3.png",
   },
 ];
