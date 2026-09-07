@@ -12,7 +12,7 @@ import Footer from "@/components/Footer/Footer";
 
 export default function Home() {
   useEffect(() => {
-    console.log("1.0.0");
+    console.log("1.0.1");
   }, []);
 
   return (
