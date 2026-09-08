@@ -1,37 +1,13 @@
-"use client";
-
-import { useEffect } from "react";
-import Intro from "@/components/Intro/Intro";
-import Navbar from "@/components/Navbar/Navbar";
-import Hero from "@/components/Hero/Hero";
-import Products from "@/components/Products/Products";
-import About from "@/components/About/About";
-import Contact from "@/components/Contact/Contact";
-import SocialFloating from "@/components/SocialFloating/SocialFloating";
-import Footer from "@/components/Footer/Footer";
-
 export default function Home() {
-  useEffect(() => {
-    console.log("1.0.1");
-  }, []);
-   useEffect(() => {
-    console.log("1.0.2");
-  }, []);
+  console.log("VERSION NUEVA JC");
 
   return (
-    <>
-      <Intro />
+    <main>
+      <div className="fixed left-0 top-0 z-[99999] bg-red-600 p-4 text-white">
+        VERSION NUEVA
+      </div>
 
-      <main className="min-h-screen bg-black text-white">
-        <Navbar />
-        <Hero />
-        <Products />
-        <About />
-        <Contact />
-        <Footer />
-      </main>
-
-      <SocialFloating />
-    </>
+      {/* resto de tu página */}
+    </main>
   );
 }
